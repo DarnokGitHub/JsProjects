@@ -1,0 +1,46 @@
+.middle-strip{
+  background-color: rgb(91, 139, 103);
+  height: 400px;
+  min-width: 1600px;
+  display:flex;
+  align-items:left;
+  border-radius: 10px;
+  box-shadow: 0px 12px 4px rgba(32, 75, 53, 0.2);
+}
+
+body{
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  height:100vh;
+}
+
+img{
+  height:380px;
+  /*osition:absolute;*/
+  border-radius: 10px;
+}
+
+.left{
+  height:400px;
+  width:50%;
+  display:flex;
+  justify-content: right;
+  position:relative;
+  right: 40px;
+  top:10px;
+}
+
+.right{
+  height:400px;
+  width:50%;
+  display: flex;
+  justify-content: left;
+  align-items:center;
+}
+
+.text{
+  font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}
