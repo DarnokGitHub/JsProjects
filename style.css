@@ -37,10 +37,17 @@ img{
   display: flex;
   justify-content: left;
   align-items:center;
+  flex-direction: column;
 }
 
 .text{
   font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
   font-size: 30px;
   font-weight: bold;
+  height:100px;
+}
+
+.author{
+  font-size:20px;
+
 }
