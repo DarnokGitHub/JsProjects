@@ -1,0 +1,27 @@
+body{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h1{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 60px;
+}
+
+.dice{
+  margin-top:20px;
+  font-size: 7rem;
+}
+
+.buttonCss{
+  padding: 20px 40px;
+  font-size: 20px;
+  background-color: rgb(162, 238, 48);
+  border-radius: 10px;
+  border:none;
+  font-weight: bold;
+}
