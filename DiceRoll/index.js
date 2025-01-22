@@ -1,13 +1,14 @@
 
-buttonEl = document.querySelector('.js-button');
+buttonEl = document.querySelector('.button-dice');
 diceAnimation = document.querySelector('.dice');
 rollHistory = document.querySelector('.roll-history');
+buttonRes = document.querySelector('.button-reset');
 historyList=[];
 
 
-function convertResult(rollResult)
+function convertOutcome(rollOutcome)
 {
-  switch(rollResult)
+  switch(rollOutcome)
   {
     case 1:
       return '&#9856;';
@@ -28,9 +29,9 @@ function convertResult(rollResult)
 
 function rollDice()
 {
-  const result = Math.floor((Math.random()*6) + 1);
-  const diceFace = convertResult(result);
-  historyList.push(result);
+  const outcome = Math.floor((Math.random()*6) + 1);
+  const diceFace = convertOutcome(outcome);
+  historyList.push(outcome);
   diceAnimation.innerHTML = diceFace;
   updateRollHistory();
 }
@@ -40,7 +41,7 @@ function updateRollHistory(){
   for(let i = 0; i < historyList.length; i++)
   {
     const listItem = document.createElement("li");
-    listItem.innerHTML = `Roll ${i+1}: <span> ${convertResult(historyList[i])}</span>`
+    listItem.innerHTML = `Roll nr ${i+1}: <span> ${convertOutcome(historyList[i])}</span>`
     rollHistory.appendChild(listItem);
   }
 }
@@ -52,3 +53,9 @@ buttonEl.addEventListener('click',()=>{
     rollDice();
   },1000);
 });
+
+buttonRes.addEventListener('click',()=>{
+  historyList = [];
+  updateRollHistory();
+})
+

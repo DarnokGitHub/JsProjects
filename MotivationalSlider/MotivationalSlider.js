@@ -20,6 +20,6 @@ function renderPage(){
   
   setTimeout(()=>{
     renderPage();
-  },10000);
+  },6000);
 }
 
