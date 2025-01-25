@@ -7,7 +7,6 @@ const search = document.getElementById('search')
 async function getUser(username) {
     try {
         const { data } = await axios(APIURL + username)
-
         createUserCard(data)
         getRepos(username)
     } catch(err) {
@@ -20,7 +19,6 @@ async function getUser(username) {
 async function getRepos(username) {
     try {
         const { data } = await axios(APIURL + username + '/repos?sort=created')
-
         addReposToCard(data)
     } catch(err) {
         createErrorCard('Problem fetching repos')
@@ -30,6 +28,8 @@ async function getRepos(username) {
 function createUserCard(user) {
     const userID = user.name || user.login
     const userBio = user.bio ? `<p>${user.bio}</p>` : ''
+    const userEmail = user.email ? `<p>${user.email}</p>` : ''
+    const userLocation = user.location ?  `<p>${user.location}</p>` : ''
     const cardHTML = `
     <div class="card">
     <div>
@@ -38,6 +38,8 @@ function createUserCard(user) {
     <div class="user-info">
       <h2>${userID}</h2>
       ${userBio}
+      ${userEmail}
+      ${userLocation}
       <ul>
         <li>${user.followers} <strong>&nbsp Followers &nbsp</strong></li>
         <li>${user.following} <strong>&nbsp Following &nbsp</strong></li>
@@ -73,7 +75,6 @@ function addReposToCard(repos) {
             repoEl.href = repo.html_url
             repoEl.target = '_blank'
             repoEl.innerText = repo.name
-
             reposEl.appendChild(repoEl)
         })
 }
@@ -85,7 +86,6 @@ form.addEventListener('submit', (e) => {
 
     if(user) {
         getUser(user)
-
         search.value = ''
     }
 })
