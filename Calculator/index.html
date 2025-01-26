@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <div id='calculator'>
+      <input id='input' readonly>
+      <div id='btns'>
+        <button onClick="addToInput('7')" >7</button>
+        <button onClick="addToInput('8')">8</button>
+        <button onClick="addToInput('9')">9</button>
+        <button onClick="addToInput('/')" class="squareBtn">/</button>
+        <button onClick="addToInput('4')">4</button>
+        <button onClick="addToInput('5')">5</button>
+        <button onClick="addToInput('6')">6</button>
+        <button onClick="addToInput('*')" class="squareBtn">*</button>
+        <button onClick="addToInput('1')">1</button>
+        <button onClick="addToInput('2')">2</button>
+        <button onClick="addToInput('3')">3</button>
+        <button onClick="addToInput('-')" class="squareBtn">-</button>
+        <button onClick="addToInput('0')">0</button>
+        <button onClick="addToInput('.')" class="squareBtn">.</button>
+        <button onClick="calculate()" class="squareBtn">=</button>
+        <button onClick="addToInput('+')" class="squareBtn">+</button>
+        
+      </div>
+      <button onClick="clearInput()"class="squareBtn clearBtn">Clear the input</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
